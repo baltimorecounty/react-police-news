@@ -1,14 +1,22 @@
 import {
-  Button,
   Card,
   CardContent,
-  CardFooter
+  CardFooter,
+  Button
 } from "@baltimorecounty/dotgov-components";
-
+import PoliceNewsThumbnail from "./PoliceNewsThumbnail";
 import React from "react";
 
-const PoliceNewsRoomCard = props => {
-  const { publishDate, title, author, articleSummary, url } = props;
+const NewsRoomCard = props => {
+  const {
+    publishDate,
+    title,
+    author,
+    articleSummary,
+    thumbnail,
+    thumbnailAltText,
+    url
+  } = props;
 
   const options = {
     year: "numeric",
@@ -23,7 +31,13 @@ const PoliceNewsRoomCard = props => {
       <h2>{title}</h2>
       <CardContent>
         <div className="row">
-          <div className="col dg_news_date-author">
+          <div className="col-md-3 col-xs-12">
+            <PoliceNewsThumbnail
+              thumbnail={thumbnail}
+              thumbnailAltText={thumbnailAltText}
+            />
+          </div>
+          <div className="col-md-9 col-xs-12 dg_news_date-author">
             <p>
               <span>{published}</span>
               <span>{author}</span>
@@ -39,4 +53,4 @@ const PoliceNewsRoomCard = props => {
   );
 };
 
-export default PoliceNewsRoomCard;
+export default NewsRoomCard;
