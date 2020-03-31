@@ -16,7 +16,7 @@ const prodApiRoot = "https://services.baltimorecountymd.gov/hub/api/news";
 const localApiRoot =
   window.location.hostname.indexOf("beta") > -1
     ? testApiRoot
-    : "https://localhost:44393/api/news";
+    : "https://localhost:44393/api/news/police";
 
 const configValues = {
   local: {
