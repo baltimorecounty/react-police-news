@@ -1,25 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
+import "./App.css";
+
+import { Config } from "@baltimorecounty/javascript-utilities";
+import { FilterList } from "@baltimorecounty/react-filter-list";
+import PoliceNewsRoomCard from "./components/PoliceNewsRoomCard";
+import React from "react";
+
+const { setConfig, getValue } = Config;
+
+const testApiRoot = "https://structuredcontentdev.bcg.ad.bcgov.us/api/news";
+const prodApiRoot = "https://services.baltimorecountymd.gov/hub/api/news";
+
+// HACK - the Config utiltiy does not account for beta.
+// TODO: This will need to be addressed when we get closer to launch
+const localApiRoot =
+  window.location.hostname.indexOf("beta") > -1
+    ? testApiRoot
+    : "https://localhost:44393/api/news";
+
+const configValues = {
+  local: {
+    apiRoot: localApiRoot
+  },
+  development: {
+    apiRoot: testApiRoot
+  },
+  staging: {
+    apiRoot: testApiRoot
+  },
+  production: {
+    apiRoot: prodApiRoot
+  }
+};
+
+setConfig(configValues);
+
+const filters = [
+  {
+    targetApiField: "category.value",
+    displayName: "Category",
+    options: [
+      { value: "releases", label: "News Releases" },
+      { value: "stories", label: "Stories" }
+    ]
+  }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FilterList
+      title="Baltimore County Police Newsroom"
+      filters={filters}
+      apiEndpoint={getValue("apiRoot")}
+      renderItem={props => <PoliceNewsRoomCard {...props} />}
+    />
   );
 }
 
