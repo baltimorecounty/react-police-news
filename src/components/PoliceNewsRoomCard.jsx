@@ -37,7 +37,7 @@ const NewsRoomCard = props => {
               thumbnailAltText={thumbnailAltText}
             />
           </div>
-          <div className="col-md-9 col-xs-12 dg_news_date-author">
+          <div className="col-md-9 col-xs-12 dg_police_news_date-author">
             <p>
               <span>{published}</span>
               <span>{author}</span>
