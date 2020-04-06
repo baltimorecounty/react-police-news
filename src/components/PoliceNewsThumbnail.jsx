@@ -10,7 +10,11 @@ const dg_police_news_icon = {
 const NewsThumbnail = ({ thumbnail, thumbnailAltText }) =>
   thumbnail ? (
     <div>
-      <img className="dg_image left" src={thumbnail} alt={thumbnailAltText} />
+      <img
+        className="img-fluid img-thumbnail"
+        src={thumbnail}
+        alt={thumbnailAltText}
+      />
     </div>
   ) : (
     <div style={dg_police_news_icon}>
