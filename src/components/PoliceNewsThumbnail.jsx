@@ -11,7 +11,7 @@ const NewsThumbnail = ({ thumbnail, thumbnailAltText }) =>
   thumbnail ? (
     <div>
       <img
-        className="img-fluid img-thumbnail"
+        className="float-left img-fluid"
         src={thumbnail}
         alt={thumbnailAltText}
       />
