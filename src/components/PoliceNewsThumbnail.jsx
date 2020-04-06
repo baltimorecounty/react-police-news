@@ -3,9 +3,7 @@ import React from "react";
 const dg_police_news_icon = {
   padding: "50px 55px",
   color: "white",
-  marginLeft: "40px",
-  marginRight: "40px",
-  marginBottom: "40px",
+  margin: "0px 40px 40px 40px",
   backgroundColor: "#243e5d",
 };
 
