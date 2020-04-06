@@ -9,7 +9,7 @@ import React from "react";
 const { setConfig, getValue } = Config;
 
 const testApiRoot =
-  "https://structuredcontentdev.bcg.ad.bcgov.us/api/hub/structuredContent/police";
+  "https://testservices.bcg.ad.bcgov.us/api/hub/structuredContent/police";
 const prodApiRoot =
   "https://services.baltimorecountymd.gov/hub/api/hub/structuredContent/police";
 
@@ -18,7 +18,7 @@ const prodApiRoot =
 const localApiRoot =
   window.location.hostname.indexOf("beta") > -1
     ? testApiRoot
-    : "https://localhost:44393/api/hub/structuredContent/police";
+    : "http://localhost:54727/api/hub/structuredContent/police";
 
 const configValues = {
   local: {
