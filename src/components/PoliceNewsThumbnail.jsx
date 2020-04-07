@@ -5,6 +5,7 @@ const iconStyles = {
   color: "white",
   margin: "0px 40px 40px 40px",
   backgroundColor: "#243e5d",
+  marginBottom: "0",
 };
 
 const imageStyles = {
@@ -14,13 +15,9 @@ const imageStyles = {
 
 const NewsThumbnail = ({ thumbnail, thumbnailAltText }) =>
   thumbnail ? (
-    <div>
-      <img style={imageStyles} src={thumbnail} alt={thumbnailAltText} />
-    </div>
+    <img style={imageStyles} src={thumbnail} alt={thumbnailAltText} />
   ) : (
-    <div style={iconStyles}>
-      <i className="far fa-shield-alt fa-3x" style={{ marginBottom: "0" }}></i>
-    </div>
+    <i className="far fa-shield-alt fa-3x" style={iconStyles}></i>
   );
 
 export default NewsThumbnail;
