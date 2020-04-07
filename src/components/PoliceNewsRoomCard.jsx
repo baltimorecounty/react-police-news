@@ -37,13 +37,13 @@ const NewsRoomCard = (props) => {
       <h2>{title}</h2>
       <CardContent>
         <div className="row">
-          <div className="col-3">
+          <div className="col-sm-3 col-xs-12">
             <PoliceNewsThumbnail
               thumbnail={thumbnail}
               thumbnailAltText={thumbnailAltText}
             />
           </div>
-          <div className="col-9">
+          <div className="col-sm-9 col-xs-12">
             <p>
               <span style={authorStyles}>{published}</span>
               <span>{author}</span>
