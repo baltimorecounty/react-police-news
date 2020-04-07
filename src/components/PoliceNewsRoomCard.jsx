@@ -2,12 +2,12 @@ import {
   Card,
   CardContent,
   CardFooter,
-  Button
+  Button,
 } from "@baltimorecounty/dotgov-components";
 import PoliceNewsThumbnail from "./PoliceNewsThumbnail";
 import React from "react";
 
-const NewsRoomCard = props => {
+const NewsRoomCard = (props) => {
   const {
     publishDate,
     title,
@@ -15,31 +15,37 @@ const NewsRoomCard = props => {
     articleSummary,
     thumbnail,
     thumbnailAltText,
-    url
+    url,
   } = props;
 
   const options = {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   };
 
   const published = new Date(publishDate).toLocaleDateString("en-US", options);
+
+  const authorStyles = {
+    borderRight: "1px solid #292929",
+    paddingRight: "10px",
+    marginRight: "10px",
+  };
 
   return (
     <Card className="text-left">
       <h2>{title}</h2>
       <CardContent>
         <div className="row">
-          <div className="col-md-3 col-xs-12">
+          <div className="col-sm-3 col-xs-12 text-center">
             <PoliceNewsThumbnail
               thumbnail={thumbnail}
               thumbnailAltText={thumbnailAltText}
             />
           </div>
-          <div className="col-md-9 col-xs-12 dg_police_news_date-author">
+          <div className="col-sm-9 col-xs-12">
             <p>
-              <span>{published}</span>
+              <span style={authorStyles}>{published}</span>
               <span>{author}</span>
             </p>
             <p>{articleSummary}</p>
