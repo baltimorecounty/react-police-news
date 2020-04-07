@@ -9,30 +9,30 @@ import React from "react";
 const { setConfig, getValue } = Config;
 
 const testApiRoot =
-  "https://structuredcontentdev.bcg.ad.bcgov.us/api/news/police";
+  "https://testservices.bcg.ad.bcgov.us/api/hub/structuredContent/news/police";
 const prodApiRoot =
-  "https://services.baltimorecountymd.gov/hub/api/news/police";
+  "https://services.baltimorecountymd.gov/hub/api/hub/structuredContent/news/police";
 
 // HACK - the Config utiltiy does not account for beta.
 // TODO: This will need to be addressed when we get closer to launch
 const localApiRoot =
   window.location.hostname.indexOf("beta") > -1
     ? testApiRoot
-    : "https://localhost:44393/api/news/police";
+    : "http://localhost:54727/api/hub/structuredContent/news/police";
 
 const configValues = {
   local: {
-    apiRoot: localApiRoot
+    apiRoot: localApiRoot,
   },
   development: {
-    apiRoot: testApiRoot
+    apiRoot: testApiRoot,
   },
   staging: {
-    apiRoot: testApiRoot
+    apiRoot: testApiRoot,
   },
   production: {
-    apiRoot: prodApiRoot
-  }
+    apiRoot: prodApiRoot,
+  },
 };
 
 setConfig(configValues);
@@ -43,9 +43,9 @@ const filters = [
     displayName: "Category",
     options: [
       { value: "releases", label: "News Releases" },
-      { value: "stories", label: "Stories" }
-    ]
-  }
+      { value: "stories", label: "Stories" },
+    ],
+  },
 ];
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
       title="Baltimore County Police Newsroom"
       filters={filters}
       apiEndpoint={getValue("apiRoot")}
-      renderItem={props => <PoliceNewsRoomCard {...props} />}
+      renderItem={(props) => <PoliceNewsRoomCard {...props} />}
     />
   );
 }
