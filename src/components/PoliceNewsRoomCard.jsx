@@ -26,7 +26,7 @@ const NewsRoomCard = (props) => {
 
   const published = new Date(publishDate).toLocaleDateString("en-US", options);
 
-  const dg_police_news_date_author = {
+  const authorStyles = {
     borderRight: "1px solid #292929",
     paddingRight: "10px",
     marginRight: "10px",
@@ -43,7 +43,7 @@ const NewsRoomCard = (props) => {
           />
           <div>
             <p>
-              <span style={dg_police_news_date_author}>{published}</span>
+              <span style={authorStyles}>{published}</span>
               <span>{author}</span>
             </p>
             <p>{articleSummary}</p>

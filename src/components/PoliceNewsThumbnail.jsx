@@ -1,7 +1,7 @@
 import React from "react";
 
-const dg_police_news_icon = {
-  padding: "50px 55px",
+const iconStyles = {
+  padding: "60px 60px",
   color: "white",
   margin: "0px 40px 40px 40px",
   backgroundColor: "#243e5d",
@@ -9,16 +9,14 @@ const dg_police_news_icon = {
 
 const NewsThumbnail = ({ thumbnail, thumbnailAltText }) =>
   thumbnail ? (
-    <div>
-      <img
-        className="float-left img-fluid"
-        src={thumbnail}
-        alt={thumbnailAltText}
-      />
-    </div>
+    <img
+      className="float-left img-fluid"
+      src={thumbnail}
+      alt={thumbnailAltText}
+    />
   ) : (
-    <div style={dg_police_news_icon}>
-      <i className="far fa-shield-alt fa-3x"></i>
+    <div style={iconStyles}>
+      <i className="far fa-shield-alt fa-3x" style={{ marginBottom: "0" }}></i>
     </div>
   );
 
