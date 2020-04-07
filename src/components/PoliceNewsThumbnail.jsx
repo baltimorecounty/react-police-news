@@ -7,13 +7,16 @@ const iconStyles = {
   backgroundColor: "#243e5d",
 };
 
+const imageStyles = {
+  width: "100%",
+  display: "inline",
+};
+
 const NewsThumbnail = ({ thumbnail, thumbnailAltText }) =>
   thumbnail ? (
-    <img
-      className="float-left img-fluid"
-      src={thumbnail}
-      alt={thumbnailAltText}
-    />
+    <div>
+      <img style={imageStyles} src={thumbnail} alt={thumbnailAltText} />
+    </div>
   ) : (
     <div style={iconStyles}>
       <i className="far fa-shield-alt fa-3x" style={{ marginBottom: "0" }}></i>
