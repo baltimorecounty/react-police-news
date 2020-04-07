@@ -1,7 +1,7 @@
 import React from "react";
 
 const iconStyles = {
-  padding: "60px 60px",
+  padding: "60px",
   color: "white",
   margin: "0px 40px 40px 40px",
   backgroundColor: "#243e5d",
