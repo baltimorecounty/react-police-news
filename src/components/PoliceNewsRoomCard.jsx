@@ -11,7 +11,6 @@ const NewsRoomCard = (props) => {
   const {
     publishDate,
     title,
-    author,
     articleSummary,
     thumbnail,
     thumbnailAltText,
@@ -26,12 +25,6 @@ const NewsRoomCard = (props) => {
 
   const published = new Date(publishDate).toLocaleDateString("en-US", options);
 
-  const authorStyles = {
-    borderRight: "1px solid #292929",
-    paddingRight: "10px",
-    marginRight: "10px",
-  };
-
   return (
     <Card className="text-left">
       <h2>{title}</h2>
@@ -44,10 +37,7 @@ const NewsRoomCard = (props) => {
             />
           </div>
           <div className="col-sm-9 col-xs-12">
-            <p>
-              <span style={authorStyles}>{published}</span>
-              <span>{author}</span>
-            </p>
+            <p>{published}</p>
             <p>{articleSummary}</p>
           </div>
         </div>
