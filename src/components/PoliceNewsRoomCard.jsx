@@ -1,9 +1,10 @@
 import {
+  Button,
   Card,
   CardContent,
   CardFooter,
-  Button,
 } from "@baltimorecounty/dotgov-components";
+
 import PoliceNewsThumbnail from "./PoliceNewsThumbnail";
 import React from "react";
 
@@ -27,7 +28,9 @@ const NewsRoomCard = (props) => {
 
   return (
     <Card className="text-left">
-      <h2>{title}</h2>
+      <h2>
+        <a href={url}>{title}</a>
+      </h2>
       <CardContent>
         <div className="row">
           <div className="col-sm-3 col-xs-12 text-center">
