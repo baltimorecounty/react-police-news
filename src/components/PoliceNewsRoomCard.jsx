@@ -11,7 +11,6 @@ const NewsRoomCard = (props) => {
   const {
     publishDate,
     title,
-    author,
     articleSummary,
     thumbnail,
     thumbnailAltText,
