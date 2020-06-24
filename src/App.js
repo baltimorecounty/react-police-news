@@ -55,6 +55,8 @@ function App() {
       filters={filters}
       apiEndpoint={getValue("apiRoot")}
       renderItem={(props) => <PoliceNewsRoomCard {...props} />}
+      includeInputFilter={true}
+      inputFilterPlaceholder="Begin typing to filter by title or summary..."
     />
   );
 }
