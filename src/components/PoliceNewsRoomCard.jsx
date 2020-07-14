@@ -10,7 +10,7 @@ import React from "react";
 
 const NewsRoomCard = (props) => {
   const {
-    publishDate,
+    contentDate,
     title,
     articleSummary,
     thumbnail,
@@ -24,7 +24,10 @@ const NewsRoomCard = (props) => {
     day: "numeric",
   };
 
-  const published = new Date(publishDate).toLocaleDateString("en-US", options);
+  const articleDate = new Date(contentDate).toLocaleDateString(
+    "en-US",
+    options
+  );
 
   return (
     <Card className="text-left">
@@ -40,7 +43,7 @@ const NewsRoomCard = (props) => {
             />
           </div>
           <div className="col-sm-9 col-xs-12">
-            <p>{published}</p>
+            <p>{articleDate}</p>
             <p>{articleSummary}</p>
           </div>
         </div>
