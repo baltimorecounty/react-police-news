@@ -2,7 +2,10 @@ import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
 
 import { Config } from "@baltimorecounty/javascript-utilities";
-import { FilterList } from "@baltimorecounty/react-filter-list";
+import {
+  FilterList,
+  InitilizeDateValues,
+} from "@baltimorecounty/react-filter-list";
 import PoliceNewsRoomCard from "./components/PoliceNewsRoomCard";
 import React from "react";
 
@@ -37,6 +40,8 @@ const configValues = {
 
 setConfig(configValues);
 
+var fromToDateFormat = InitilizeDateValues();
+
 const filters = [
   {
     targetApiField: "category.value",
@@ -45,6 +50,11 @@ const filters = [
       { value: "releases", label: "News Releases" },
       { value: "stories", label: "Stories" },
     ],
+  },
+  {
+    targetApiField: "FilterDate",
+    displayName: "FilterDate",
+    value: `${fromToDateFormat}`,
   },
 ];
 
