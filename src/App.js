@@ -1,10 +1,11 @@
+import React from "react";
 import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
-
 import { Config } from "@baltimorecounty/javascript-utilities";
 import { FilterList } from "@baltimorecounty/react-filter-list";
-import PoliceNewsRoomCard from "./components/PoliceNewsRoomCard";
-import React from "react";
+
+import DisplayFilterList from './displayFilterList';
+import { BrowserRouter as Router } from "react-router-dom";
 
 const { setConfig, getValue } = Config;
 
@@ -50,23 +51,22 @@ const filters = [
   {
     targetApiField: "FilterDate",
     displayName: "FilterDate",
-    value: `${date.setDate(date.getDate() - 14)},${date}`,
+    value:`04/01/2020,07/20/2020` , 
+  
   },
 ];
 
 console.log(date.setDate(date.getDate() - 14));
 
-function App() {
+function App(props) {
   return (
-    <FilterList
-      title="Baltimore County Police Newsroom"
-      filters={filters}
-      apiEndpoint={getValue("apiRoot")}
-      renderItem={(props) => <PoliceNewsRoomCard {...props} />}
-      includeInputFilter={true}
-      inputFilterPlaceholder="Begin typing to filter by title or summary..."
-    />
+    <Router>
+    <DisplayFilterList filters={filters}{...props} />
+    </Router>
+  
   );
 }
 
 export default App;
+
+ 
