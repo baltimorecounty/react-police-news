@@ -1,27 +1,18 @@
-import React from "react";
-import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
-import "./App.css";
-
+import { Config } from "@baltimorecounty/javascript-utilities";
 import { FilterList } from "@baltimorecounty/react-filter-list";
 import PoliceNewsRoomCard from "./components/PoliceNewsRoomCard";
-import { Run, getValue, filters } from "./Startup";
+import React from "react";
+const { setConfig, getValue } = Config;
 
-Run();
-
-function App(props) {
-  return (
+const DisplayFilterList = ({ filters = [] }) => (
     <FilterList
       title="Baltimore County Police Newsroom"
       filters={filters}
       apiEndpoint={getValue("apiRoot")}
       renderItem={(props) => <PoliceNewsRoomCard {...props} />}
       includeInputFilter={true}
-      includeDateFilter={true}
       inputFilterPlaceholder="Begin typing to filter by title or summary..."
-    />
-  );
-}
+    />   
+);
 
-export default App;
-
- 
+export default DisplayFilterList;
