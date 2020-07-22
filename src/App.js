@@ -1,14 +1,14 @@
+import React from "react";
 import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
 
 import { FilterList } from "@baltimorecounty/react-filter-list";
 import PoliceNewsRoomCard from "./components/PoliceNewsRoomCard";
-import React from "react";
 import { Run, getValue, filters } from "./Startup";
 
 Run();
 
-function App() {
+function App(props) {
   return (
     <FilterList
       title="Baltimore County Police Newsroom"
