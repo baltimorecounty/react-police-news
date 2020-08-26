@@ -17,11 +17,10 @@ function App(props) {
       renderItem={(props) => <PoliceNewsRoomCard {...props} />}
       includeInputFilter={true}
       includeDateFilter={true}
+      searchCategory="PoliceNews"
       inputFilterPlaceholder="Begin typing to filter by title or summary..."
     />
   );
 }
 
 export default App;
-
- 
