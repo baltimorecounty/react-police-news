@@ -8,7 +8,7 @@ const { setConfig, getValue } = Config;
 const testApiRoot =
   "https://testservices.baltimorecountymd.gov/api/hub/structuredContent/news/police";
 const prodApiRoot =
-  "https://services.baltimorecountymd.gov/hub/api/hub/structuredContent/news/police";
+  "https://services.baltimorecountymd.gov/api/hub/structuredContent/news/police";
 
 // HACK - the Config utiltiy does not account for beta.
 // TODO: This will need to be addressed when we get closer to launch
