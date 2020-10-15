@@ -15,7 +15,7 @@ const prodApiRoot =
 const localApiRoot =
   window.location.hostname.indexOf("beta") > -1
     ? testApiRoot
-    : "https://localhost:44393/api/News/Police";
+    : "http://localhost:54727/api/hub/structuredContent/news/police";
 
 const configValues = {
   local: {
