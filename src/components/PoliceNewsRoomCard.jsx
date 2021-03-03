@@ -4,7 +4,7 @@ import {
   CardContent,
   CardFooter,
 } from "@baltimorecounty/dotgov-components";
-
+import ReactHtmlParser from "react-html-parser";
 import PoliceNewsThumbnail from "./PoliceNewsThumbnail";
 import React from "react";
 
@@ -32,7 +32,7 @@ const NewsRoomCard = (props) => {
   return (
     <Card className="text-left">
       <h2>
-        <a href={url}>{title}</a>
+        <a href={url}>{ReactHtmlParser(title)}</a>
       </h2>
       <CardContent>
         <div className="row">
@@ -44,7 +44,7 @@ const NewsRoomCard = (props) => {
           </div>
           <div className="col-sm-9 col-xs-12">
             <p>{articleDate}</p>
-            <p>{articleSummary}</p>
+            <p>{ReactHtmlParser(articleSummary)}</p>
           </div>
         </div>
       </CardContent>
