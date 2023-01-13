@@ -4,10 +4,12 @@ import "./App.css";
 
 import { FilterList } from "@baltimorecounty/react-filter-list";
 import PoliceNewsRoomCard from "./components/PoliceNewsRoomCard";
-import { Run, getValue, filters } from "./Startup";
+import { Run, getValue } from "./Startup";
+import { filters, addFilterToEndpoint } from "./filters/filters";
 
 Run();
 
+console.log(addFilterToEndpoint());
 function App(props) {
   return (
     <FilterList
@@ -18,6 +20,7 @@ function App(props) {
       includeInputFilter={true}
       includeDateFilter={true}
       includeClearButton={true}
+      includedFilters={addFilterToEndpoint()}
       searchCategory="PoliceNews"
       inputFilterPlaceholder="Begin typing to filter by title or summary..."
     />

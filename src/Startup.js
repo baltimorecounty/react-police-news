@@ -1,6 +1,5 @@
 import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
 import "./App.css";
-
 import { Config } from "@baltimorecounty/javascript-utilities";
 
 const { setConfig, getValue } = Config;
@@ -32,21 +31,6 @@ const configValues = {
   },
 };
 
-const filters = [
-  {
-    targetApiField: "category.value",
-    displayName: "Category",
-    options: [
-      { value: "releases", label: "News Releases" },
-      { value: "stories", label: "Stories" },
-    ],
-  },
-  {
-    targetApiField: "recordsperpage",
-    value: 10,
-  },
-];
-
 /**
  * Runs startup code for our create react app
  */
@@ -54,4 +38,4 @@ const Run = () => {
   setConfig(configValues);
 };
 
-export { Run, getValue, filters };
+export { Run, getValue };
